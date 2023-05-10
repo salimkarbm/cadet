@@ -22,7 +22,8 @@ exports.signup = async (req, res, next) => {
   exports.getAllUsers = async (req, res, next) => {
    try{
       const user = await User.find()
-      res.status(200).json(user)
+      const result = user.length
+      res.status(200).json({user, result})
    }catch(err){
       console.error(err);
    }
