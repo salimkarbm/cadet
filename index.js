@@ -3,10 +3,10 @@ const path = require('path');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const appPath = require('app-root-path');
+const mongoose = require('mongoose');
 
 // import express
 const express = require('express');
-
 
 
 dotenv.config({ path: `${appPath}/.env` });
@@ -41,9 +41,6 @@ mongoose
 // Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
-
-
 
 
 // Define index route
