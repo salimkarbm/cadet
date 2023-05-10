@@ -8,13 +8,13 @@ const mongoose = require('mongoose');
 // import express
 const express = require('express');
 
-app.use(cors());
+
 
 dotenv.config({ path: `${appPath}/.env` });
 // Initialize express
 const app = express();
 
-
+app.use(cors());
 
 // Port
 const PORT  = process.env.PORT || 3000;
