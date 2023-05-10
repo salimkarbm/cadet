@@ -31,7 +31,7 @@ exports.signup = async (req, res, next) => {
 
  exports.remove = async (req, res, next) => {
    try{
-      const user = User.delete()
+      const user = await User.remove()
       res.status(204).json(user)
    }catch(err){
       console.error(err);
