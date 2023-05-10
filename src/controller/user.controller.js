@@ -11,6 +11,7 @@ exports.signup = async (req, res, next) => {
     try{
      const {email, password} = req.body
      const user = await user.create({ email: email, password: password})
+     res.status(201).json(user)
 
     }catch(err){
        console.error(err);
@@ -22,6 +23,7 @@ exports.signup = async (req, res, next) => {
    try{
       const {email, password} = req.body
       const user = user.find()
+      res.status(200).json(user)
    }catch(err){
       console.error(err);
    }
